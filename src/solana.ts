@@ -16,19 +16,19 @@ async function initializeAccounts(
   receiverKeyPair: Keypair
 ) {
   try {
-    const lamportsToInitialize = LAMPORTS_PER_SOL * 1;
+    const lamportsToTransfer= LAMPORTS_PER_SOL * 1;
     const receiverAccount = Keypair.generate();
     const transferInstruction = SystemProgram.transfer({
       fromPubkey: senderKeyPair.publicKey,
       toPubkey: receiverAccount.publicKey,
-      lamports: lamportsToInitialize,
+      lamports: lamportsToTransfer,
     });
 
     const transaction = new Transaction().add(transferInstruction);
     await sendAndConfirmTransaction(connection, transaction, [senderKeyPair]);
 
     console.log(
-      `Initialized sender account with ${lamportsToInitialize} lamports.`
+      `Initialized sender account with ${lamportToTransfer} lamports.`
     );
 
     console.log(
