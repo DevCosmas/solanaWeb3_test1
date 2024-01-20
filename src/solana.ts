@@ -28,7 +28,7 @@ async function sendAndReceiveProgram(
     await sendAndConfirmTransaction(connection, transaction, [senderKeyPair]);
 
     console.log(
-      `Initialized sender account with ${lamportsToTransfer} lamports.`
+      ` An amount of ${lamportsToTransfer} lamports has been sent to ${receiverAccount}`
     );
 
     console.log(

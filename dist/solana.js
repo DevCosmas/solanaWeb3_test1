@@ -15,7 +15,7 @@ async function sendAndReceiveProgram(connection, senderKeyPair, receiverKeyPair)
         });
         const transaction = new web3_js_1.Transaction().add(transferInstruction);
         await (0, web3_js_1.sendAndConfirmTransaction)(connection, transaction, [senderKeyPair]);
-        console.log(`Initialized sender account with ${lamportsToTransfer} lamports.`);
+        console.log(` An amount of ${lamportsToTransfer} lamports has been sent to ${receiverAccount}`);
         console.log('Sender Balance:', await connection.getBalance(senderKeyPair.publicKey));
         console.log('Receiver Balance:', await connection.getBalance(receiverAccount.publicKey));
     }

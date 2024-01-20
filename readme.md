@@ -8,6 +8,9 @@ Typscript
 
 @solana/web3
 
+## Program level
+
+Basic
 _Task breakdown_
 
 - Build a simple send and recieve transaction program on solana web3:
